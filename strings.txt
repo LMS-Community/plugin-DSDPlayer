@@ -1,0 +1,77 @@
+# String file for DSDPlayer plugin
+
+PLUGIN_DSDPLAYER
+	EN	DSDPlayer
+
+PLUGIN_DSDPLAYER_DESC
+	EN	[Syno-Fix] The DSDPlayer plugin allows you to listen to DSD audio files (.dff or .dsf).
+
+PLUGIN_DSDPLAYER_USEDOP
+	EN	Enable DSD-over-PCM
+
+PLUGIN_DSDPLAYER_USEDOP_DESC
+	EN	If the DAC of this player supports DSD-over-PCM standard you should enable this in order to get native DSD playback instead of conversion to PCM. You must also ensure that Volume Control setting for this player is "Output level is fixed at 100%".  Otherwise use the settings below to tune resampling parameters.
+
+PLUGIN_DSDPLAYER_NATIVE
+	EN	This player supports native playback of DSD files.  DSD-over-PCM should be configured on the player configuration interface.
+
+PLUGIN_DSDPLAYER_NO_DSDPLAY
+	EN	DSDPlayer does not currently include a version of dsdplay which supports your server.  DSD playback has been disabled for this player.
+
+PLUGIN_DSDPLAYER_PCM_ONLY
+	EN	DSDPlayer will transcode DSD to PCM for this player.  Use the settings below to tune resampling parameters.
+
+PLUGIN_DSDPLAYER_QUALITY
+	EN	Soxr Quality
+
+PLUGIN_DSDPLAYER_QUALITY_DESC
+	EN	Specify the resampling quality.  Higher quality uses more processing power on your server.
+
+PLUGIN_DSDPLAYER_FILTER
+	EN	Soxr Filter
+
+PLUGIN_DSDPLAYER_FILTER_DESC
+	EN	Specify the resampling filter type.
+
+PLUGIN_DSDPLAYER_RECIPE_VH
+	EN	Very High Quality
+
+PLUGIN_DSDPLAYER_RECIPE_H
+	EN	High Quality
+
+PLUGIN_DSDPLAYER_RECIPE_M
+	EN	Medium Quality
+
+PLUGIN_DSDPLAYER_RECIPE_M
+	EN	Medium Quality
+
+PLUGIN_DSDPLAYER_RECIPE_L
+	EN	Low Quality
+
+PLUGIN_DSDPLAYER_RECIPE_Q
+	EN	Quick
+
+PLUGIN_DSDPLAYER_FILTER_L
+	EN	Linear Phase
+
+PLUGIN_DSDPLAYER_FILTER_I
+	EN	Intermediate Phase
+
+PLUGIN_DSDPLAYER_FILTER_M
+	EN	Minimum Phase
+
+PLUGIN_DSDPLAYER_STEEP
+	EN	Soxr Steep Filter
+
+PLUGIN_DSDPLAYER_STEEP_DESC
+	EN	Use Soxr steep filter.
+
+PLUGIN_DSDPLAYER_OTHER
+	EN	Other Params
+
+PLUGIN_DSDPLAYER_OTHER_DESC
+	EN	Specifiy additional parameters for soxr resampling.
+
+PLUGIN_DSDPLAYER_NONE
+	EN	(none selected)
+

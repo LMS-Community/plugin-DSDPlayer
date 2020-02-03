@@ -1,0 +1,110 @@
+[% PROCESS settings/header.html %]
+
+[% WRAPPER settingSection %]
+
+[% IF native %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_USEDOP" desc="" %]
+<div class="prefDesc">
+  [% "PLUGIN_DSDPLAYER_NATIVE" | string %]
+</div>
+[% END %]
+
+[% ELSIF not dopavail %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER" desc="" %]
+<div class="prefDesc">
+  [% "PLUGIN_DSDPLAYER_PCM_ONLY" | string %]
+</div>
+[% END %]
+
+[% ELSIF not dsdplay %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER" desc="" %]
+<div class="prefDesc">
+  [% "PLUGIN_DSDPLAYER_NO_DSDPLAY" | string %]
+</div>
+[% END %]
+
+[% ELSE %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_USEDOP" desc="PLUGIN_DSDPLAYER_USEDOP_DESC" %]   
+<input type="checkbox" [% IF prefs.usedop %]checked [% END %] class="stdedit" name="pref_usedop" id="usedop" value="1"/>
+<label for="enabled" class="stdlabel">[% "PLUGIN_DSDPLAYER_USEDOP" | string %]</label>
+[% END %]
+
+[% END %]
+
+[% IF not native and dsdplay %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_QUALITY" desc="PLUGIN_DSDPLAYER_QUALITY_DESC" %]
+<select class="stdedit" name="pref_quality" id="quality">
+  [% FOREACH option = {
+    ''  => 'PLUGIN_DSDPLAYER_NONE',
+    'v' => 'PLUGIN_DSDPLAYER_RECIPE_VH',
+    'h' => 'PLUGIN_DSDPLAYER_RECIPE_H',
+    'm' => 'PLUGIN_DSDPLAYER_RECIPE_M',
+    'l' => 'PLUGIN_DSDPLAYER_RECIPE_L',
+    'q' => 'PLUGIN_DSDPLAYER_RECIPE_Q',
+  } %]
+  <option [% IF prefs.quality == option.key %]selected [% END %]value="[% option.key %]">
+	[% option.value | string %]
+  </option>
+  [%- END -%]
+</select>
+[% END %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_FILTER" desc="PLUGIN_DSDPLAYER_FILTER_DESC" %]
+<select class="stdedit" name="pref_filter" id="filter">
+  [% FOREACH option = {
+    ''  => 'PLUGIN_DSDPLAYER_NONE',					
+    'L' => 'PLUGIN_DSDPLAYER_FILTER_L',
+    'I' => 'PLUGIN_DSDPLAYER_FILTER_I',
+    'M' => 'PLUGIN_DSDPLAYER_FILTER_M',
+  } %]
+  <option [% IF prefs.filter == option.key %]selected [% END %]value="[% option.key %]">
+	[% option.value | string %]
+  </option>
+  [%- END -%]
+</select>
+[% END %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_STEEP" desc="PLUGIN_DSDPLAYER_STEEP_DESC" %]
+<select class="stdedit" name="pref_steep" id="steep">
+  [% FOREACH option = {
+    ''  => 'PLUGIN_DSDPLAYER_NONE',
+    's' => 'PLUGIN_DSDPLAYER_STEEP',
+  } %]
+  <option [% IF prefs.steep == option.key %]selected [% END %]value="[% option.key %]">
+	[% option.value | string %]
+  </option>
+  [%- END -%]
+</select>
+[% END %]
+
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_OTHER" desc="PLUGIN_DSDPLAYER_OTHER_DESC" %]
+  <div class="input">
+	<input class="input" type="text" name="pref_flags" value="[% prefs.flags %]" placeholder="Flags" id="flags" />
+  </div>
+  <div class="input">
+	<input class="input" type="text" name="pref_att" value="[% prefs.att %]" placeholder="Attenuation" id="attenuation" />
+  </div>
+  <div class="input">
+	<input class="input" type="text" name="pref_precision" value="[% prefs.precision %]" placeholder="Precision" id="precision" />
+  </div>
+  <div class="input">
+	<input class="input" type="text" name="pref_end" value="[% prefs.end %]" placeholder="Passband End" id="end" />
+  </div>
+  <div class="input">
+	<input class="input" type="text" name="pref_start" value="[% prefs.start %]" placeholder="Stopband Start" id="start" />
+  </div>
+  <div class="input">
+	<input class="input" type="text" name="pref_phase" value="[% prefs.phase %]" placeholder="Phase" id="phase" />
+  </div>
+[% END %]
+
+[% END %]
+
+[% END %]
+
+[% PROCESS settings/footer.html %]

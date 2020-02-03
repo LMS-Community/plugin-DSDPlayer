@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<extension>
+	<name>PLUGIN_DSDPLAYER</name>
+	<module>Plugins::DSDPlayer::Plugin</module>
+	<version>1.02</version>
+	<description>PLUGIN_DSDPLAYER_DESC</description>
+	<creator>Daphile, Triode</creator>
+	<homepageURL>http://www.daphile.com</homepageURL>
+	<defaultState>enabled</defaultState>
+	<type>2</type><!-- type=extension -->
+	<targetApplication>
+		<id>SlimServer</id>
+		<minVersion>7.9</minVersion>
+        <maxVersion>7.*</maxVersion>
+	</targetApplication>
+</extension>
