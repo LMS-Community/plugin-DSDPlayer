@@ -4,7 +4,7 @@ PLUGIN_DSDPLAYER
 	EN	DSDPlayer
 
 PLUGIN_DSDPLAYER_DESC
-	EN	[Syno-Fix] The DSDPlayer plugin allows you to listen to DSD audio files (.dff or .dsf).
+	EN	The DSDPlayer plugin allows you to listen to DSD audio files (.dff or .dsf).
 
 PLUGIN_DSDPLAYER_USEDOP
 	EN	Enable DSD-over-PCM
