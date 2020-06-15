@@ -1,0 +1,5 @@
+For FreeBSD dsdplay requires the flac and libsoxr packages from ports.
+
+flac-1.3.2                     Free lossless audio codec
+libsoxr-0.1.3                  High quality, one-dimensional sample-rate conversion library
+
