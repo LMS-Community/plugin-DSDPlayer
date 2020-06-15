@@ -3,7 +3,7 @@
 <extension>
 	<name>PLUGIN_DSDPLAYER</name>
 	<module>Plugins::DSDPlayer::Plugin</module>
-	<version>1.03</version>
+	<version>1.04</version>
 	<description>PLUGIN_DSDPLAYER_DESC</description>
 	<creator>Kimmo, Triode, Ralphy</creator>
 	<homepageURL>http://www.daphile.com</homepageURL>
@@ -12,6 +12,6 @@
 	<targetApplication>
 		<id>SlimServer</id>
 		<minVersion>7.9</minVersion>
-        <maxVersion>8.*</maxVersion>
+	        <maxVersion>8.*</maxVersion>
 	</targetApplication>
 </extension>
