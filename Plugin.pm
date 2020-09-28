@@ -36,8 +36,13 @@ sub setupTranscoder {
 	my $cmdTableDoP = "[dsdplay] -R $resample -u " . '$START$ $END$ $RESAMPLE$ $FILE$';
 	my $capabilities = { F => 'noArgs', T => 'START=-s %t', U => 'END=-e %v', D => 'RESAMPLE=-r %d' };
 
+	my $wvpxCmdTable = "[wvunpack] " . '$FILE$ $START$ $END$' . " --dff -o - | [dsdplay] -R $resample " . '$RESAMPLE$'; 
+	my $wvpxCmdTableDoP = "[wvunpack] " . '$FILE$ $START$ $END$' . " --dff -o - | [dsdplay] -u -R $resample " . '$RESAMPLE$';
+	my $wvpxCapabilities = { F => 'noArgs', T => 'START=--skip=%t', U => 'END=--until=%v', D => 'RESAMPLE=-r %d' };
+
 	my $dsf = 'dsf-flc-*-' . lc($client->macaddress);
 	my $dff = 'dff-flc-*-' . lc($client->macaddress);
+	my $wvpx = 'wvpx-flc-*-' . lc($client->macaddress);
 
 	if ($usedop) {
 
@@ -45,13 +50,18 @@ sub setupTranscoder {
 		$Slim::Player::TranscodingHelper::capabilities{ $dsf } = $capabilities;
 		$Slim::Player::TranscodingHelper::commandTable{ $dff } = $cmdTableDoP;
 		$Slim::Player::TranscodingHelper::capabilities{ $dff } = $capabilities;
-
+		$Slim::Player::TranscodingHelper::commandTable{ $wvpx } = $wvpxCmdTableDoP;
+		$Slim::Player::TranscodingHelper::capabilities{ $wvpx } = $wvpxCapabilities;
+		
 	} else {
 
 		$Slim::Player::TranscodingHelper::commandTable{ $dsf } = $cmdTable;
 		$Slim::Player::TranscodingHelper::capabilities{ $dsf } = $capabilities;
 		$Slim::Player::TranscodingHelper::commandTable{ $dff } = $cmdTable;
 		$Slim::Player::TranscodingHelper::capabilities{ $dff } = $capabilities;
+		$Slim::Player::TranscodingHelper::commandTable{ $wvpx } = $wvpxCmdTable;
+		$Slim::Player::TranscodingHelper::capabilities{ $wvpx } = $wvpxCapabilities;
+
 	}
 }
 
