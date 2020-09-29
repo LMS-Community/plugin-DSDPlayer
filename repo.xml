@@ -4,7 +4,7 @@
     <title lang="EN">DSDPlayer</title>
   </details>
   <plugins>
-    <plugin name="DSDPlayer" version="1.06" minTarget="7.9" maxTarget="8.*" target="unix">
+    <plugin name="DSDPlayer" version="1.06" minTarget="7.9" maxTarget="8.*">
       <title lang="EN">DSDPlayer</title>
       <desc lang="EN">Playback of DSD files (.dsf and .dff) via your Squeezebox.  Supports conversion to PCM or playback as DSD-over-PCM (DoP) for DACs supporting DoP.</desc>
       <creator>Kimmo, Triode, Ralphy</creator>
