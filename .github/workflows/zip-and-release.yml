@@ -11,6 +11,9 @@ jobs:
     name: Zip and release
     runs-on: ubuntu-latest
     steps:
+      - name: Install dependencies
+        run: sudo apt-get --no-install-recommends -yq install xmlstarlet
+        
       - name: Checkout code
         uses: actions/checkout@v2
         
@@ -19,8 +22,10 @@ jobs:
           zip -r ${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip . -x ".git/*" ".github/*" "repo.xml"
           export SHA1SUM=`sha1sum "${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip" | awk '{ print $1 }'`
           export ZIP_URL="https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.version }}/${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip"
-          python -c "from xml.etree import ElementTree as et; tree = et.parse('repo.xml'); tree.find('.//sha').text = '$SHA1SUM'; tree.find('.//url').text = '$ZIP_URL'; tree.write('repo.xml')"
-          
+          xmlstarlet ed --inplace --update "//extensions/plugins/plugin/sha" --value "$SHA1SUM" repo.xml
+          xmlstarlet ed --inplace --update "//extensions/plugins/plugin/url" --value "$ZIP_URL" repo.xml
+          xmlstarlet ed --inplace --update "//extensions/plugins/plugin/@version" --value "${{ github.event.inputs.version }}" repo.xml
+                    
       - name: Commit changes
         run: |
           git config user.name github-actions
