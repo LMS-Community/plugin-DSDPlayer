@@ -1,0 +1,51 @@
+name: Zip and release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version'
+        required: true
+
+jobs:
+  build:
+    name: Zip and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Zip plugin and update repo.xml
+        run: |
+          zip -r ${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip . -x ".git/*" ".github/*" "repo.xml"
+          export SHA1SUM=`sha1sum "${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip" | awk '{ print $1 }'`
+          export ZIP_URL="https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.version }}/${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip"
+          python -c "from xml.etree import ElementTree as et; tree = et.parse('repo.xml'); tree.find('.//sha').text = '$SHA1SUM'; tree.find('.//url').text = '$ZIP_URL'; tree.write('repo.xml')"
+          
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -a -m "Release ${{ github.event.inputs.version }}"
+          git push
+          
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
+          draft: false
+          prerelease: false
+          
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip
+          asset_content_type: application/zip
