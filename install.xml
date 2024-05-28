@@ -2,7 +2,7 @@
 <extension>
   <name>PLUGIN_DSDPLAYER</name>
   <module>Plugins::DSDPlayer::Plugin</module>
-  <version>1.09</version>
+  <version>1.10</version>
   <description>PLUGIN_DSDPLAYER_DESC</description>
   <creator>Kimmo, Triode, Ralphy</creator>
   <homepageURL>https://github.com/terual/DSDPlayer</homepageURL>
