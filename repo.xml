@@ -4,13 +4,13 @@
     <title lang="EN">DSDPlayer</title>
   </details>
   <plugins>
-    <plugin maxTarget="9.*" minTarget="7.9" name="DSDPlayer" version="1.10">
+    <plugin maxTarget="9.*" minTarget="7.9" name="DSDPlayer" version="1.11">
       <title lang="EN">DSDPlayer</title>
       <desc lang="EN">Playback of DSD files (.dsf and .dff) via your Squeezebox.  Supports conversion to PCM or playback as DSD-over-PCM (DoP) for DACs supporting DoP.</desc>
       <creator>Kimmo, Triode, Ralphy</creator>
       <email>triode1@btinternet.com</email>
-      <url>https://github.com/LMS-Community/plugin-DSDPlayer/releases/download/1.10/plugin-DSDPlayer-1.10.zip</url>
-      <sha>220d430ee94eee300d8e37fb6e0bf18c67a39b1b</sha>
+      <url>https://github.com/LMS-Community/plugin-DSDPlayer/releases/download/1.11/plugin-DSDPlayer-1.11.zip</url>
+      <sha>6fea2c9f0eed0567689aa6d03956a0cdc689a429</sha>
     </plugin>
   </plugins>
 </extensions>
