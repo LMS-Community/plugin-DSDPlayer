@@ -31,8 +31,10 @@ sub setupTranscoder {
 
 	my $usedop   = $prefs->client($client)->get('usedop');
 	my $resample = $prefs->client($client)->get('resample') || "::::::";
+	my $gain     = $prefs->client($client)->get('gain');
 
 	my $cmdTable    = "[dsdplay] -R $resample " . '$START$ $END$ $RESAMPLE$ $FILE$';
+	$cmdTable .= " | [sox] -q -t flac - -t flac -C 0 - gain -l $gain" if $gain;
 	my $cmdTableDoP = "[dsdplay] -R $resample -u " . '$START$ $END$ $RESAMPLE$ $FILE$';
 	my $capabilities = { F => 'noArgs', T => 'START=-s %t', U => 'END=-e %v', D => 'RESAMPLE=-r %d' };
 
