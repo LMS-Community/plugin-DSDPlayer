@@ -70,8 +70,13 @@ PLUGIN_DSDPLAYER_OTHER
 	EN	Other Params
 
 PLUGIN_DSDPLAYER_OTHER_DESC
-	EN	Specifiy additional parameters for soxr resampling.
+	EN	Specify additional parameters for soxr resampling.
 
 PLUGIN_DSDPLAYER_NONE
 	EN	(none selected)
 
+PLUGIN_DSDPLAYER_GAIN
+	EN	Add gain
+
+PLUGIN_DSDPLAYER_GAIN_DESC
+	EN	Many DSD/DSF files (especially SACD rips) are mastered to a peak of -6dB. This makes their volume low compared to other files. You can increase the level when resampling to PCM. If your chosen gain introduces audible distortion for any of your files, reduce it.

@@ -82,6 +82,24 @@
 </select>
 [% END %]
 
+[% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_GAIN" desc="PLUGIN_DSDPLAYER_GAIN_DESC" %]
+<select class="stdedit" name="pref_gain" id="gain">
+  [% FOREACH option = {
+    '0'  => '0 dB',
+    '1'  => '1 dB',
+    '2'  => '2 dB',
+    '3'  => '3 dB',
+    '4'  => '4 dB',
+    '5'  => '5 dB',
+    '6'  => '6 dB',
+  } %]
+  <option [% IF prefs.gain == option.key %]selected [% END %]value="[% option.key %]">
+	[% option.value %]
+  </option>
+  [%- END -%]
+</select>
+[% END %]
+
 [% WRAPPER settingGroup title="PLUGIN_DSDPLAYER_OTHER" desc="PLUGIN_DSDPLAYER_OTHER_DESC" %]
   <div class="input">
 	<input class="input" type="text" name="pref_flags" value="[% prefs.flags %]" placeholder="Flags" id="flags" />

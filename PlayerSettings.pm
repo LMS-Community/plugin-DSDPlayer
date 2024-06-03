@@ -35,6 +35,7 @@ sub handler {
     if ($params->{'saveSettings'}) {
 
 		$prefs->client($client)->set('usedop', $params->{'pref_usedop'} || 0);
+		$prefs->client($client)->set('gain', $params->{'pref_gain'} || 0);
 
 		my $quality= $params->{'pref_quality'} || "";
 		my $filter = $params->{'pref_filter'} || "";
@@ -48,7 +49,8 @@ sub handler {
 
 		$prefs->client($client)->set('resample', "$quality$filter$steep:$flags:$att:$precision:$end:$start:$phase");
 
-		$log->debug("usdop: " . $params->{'pref_usedop'});
+		$log->debug("usedop: " . $params->{'pref_usedop'});
+		$log->debug("gain: " . $params->{'pref_gain'});
 		$log->debug("resample: $quality$filter$steep:$flags:$att:$precision:$end:$start:$phase");
 
 		Plugins::DSDPlayer::Plugin::setupTranscoder($client);
@@ -61,6 +63,7 @@ sub handler {
 	$params->{'dopavail'} = $client->maxSupportedSamplerate >= 176400 ? 1 : 0;
 
 	$params->{'prefs'}->{'usedop'} = $prefs->client($client)->get('usedop');
+	$params->{'prefs'}->{'gain'} = $prefs->client($client)->get('gain');
 
 	my $resample = $prefs->client($client)->get('resample');
 	my ($recipe, $flags, $att, $precision, $end, $start, $phase) = split(":", $resample);
