@@ -42,7 +42,6 @@ jobs:
         with:
           tag_name: ${{ github.event.inputs.version }}
           name: Version ${{ github.event.inputs.version }}
-          body: DSDPlayer plugin release
           draft: false
           prerelease: false
           files: ${{ github.event.repository.name }}-${{ github.event.inputs.version }}.zip
