@@ -26,8 +26,15 @@ sub initPlugin {
 	Slim::Control::Request::subscribe(\&initClientForDSD, [['client'],['new','reconnect']]);
 }
 
+sub postinitPlugin {
+	if (Slim::Utils::Versions->compareVersions($::VERSION, '9.2.0') >= 0) {
+		# this module adds a Slim::Player::Song::handleSampleAndBitrate() helper to deal with DSD specifics
+		require Plugins::DSDPlayer::Song;
+	}
+}
+
 sub setupTranscoder {
-    my $client = $_[0] || return;
+	my $client = $_[0] || return;
 
 	my $usedop   = $prefs->client($client)->get('usedop');
 	my $resample = $prefs->client($client)->get('resample') || "::::::";
@@ -38,7 +45,7 @@ sub setupTranscoder {
 	my $cmdTableDoP = "[dsdplay] -R $resample -u " . '$START$ $END$ $RESAMPLE$ $FILE$';
 	my $capabilities = { F => 'noArgs', T => 'START=-s %t', U => 'END=-e %v', D => 'RESAMPLE=-r %d' };
 
-	my $wvpxCmdTable = "[wvunpack] " . '$FILE$ $START$ $END$' . " --dff -o - | [dsdplay] -R $resample " . '$RESAMPLE$'; 
+	my $wvpxCmdTable = "[wvunpack] " . '$FILE$ $START$ $END$' . " --dff -o - | [dsdplay] -R $resample " . '$RESAMPLE$';
 	my $wvpxCmdTableDoP = "[wvunpack] " . '$FILE$ $START$ $END$' . " --dff -o - | [dsdplay] -u -R $resample " . '$RESAMPLE$';
 	my $wvpxCapabilities = { F => 'noArgs', T => 'START=--skip=%t', U => 'END=--until=%v', D => 'RESAMPLE=-r %d' };
 
@@ -54,7 +61,7 @@ sub setupTranscoder {
 		$Slim::Player::TranscodingHelper::capabilities{ $dff } = $capabilities;
 		$Slim::Player::TranscodingHelper::commandTable{ $wvpx } = $wvpxCmdTableDoP;
 		$Slim::Player::TranscodingHelper::capabilities{ $wvpx } = $wvpxCapabilities;
-		
+
 	} else {
 
 		$Slim::Player::TranscodingHelper::commandTable{ $dsf } = $cmdTable;
@@ -68,9 +75,9 @@ sub setupTranscoder {
 }
 
 sub initClientForDSD {
-    my $request = shift;
-  
-    setupTranscoder($request->client());
+	my $request = shift;
+
+	setupTranscoder($request->client());
 }
 
 1;
