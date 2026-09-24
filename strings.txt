@@ -2,81 +2,108 @@
 
 PLUGIN_DSDPLAYER
 	EN	DSDPlayer
+	HU	DSDPlayer
 
 PLUGIN_DSDPLAYER_DESC
 	EN	The DSDPlayer plugin allows you to listen to DSD audio files (.dff or .dsf).
+	HU	A DSDPlayer beépülő modul lehetővé teszi a DSD hangfájlok (.dff vagy .dsf) hallgatását.
 
 PLUGIN_DSDPLAYER_USEDOP
 	EN	Enable DSD-over-PCM
+	HU	DSD-over-PCM engedélyezése
 
 PLUGIN_DSDPLAYER_USEDOP_DESC
 	EN	If the DAC of this player supports DSD-over-PCM standard you should enable this in order to get native DSD playback instead of conversion to PCM. You must also ensure that Volume Control setting for this player is "Output level is fixed at 100%".  Otherwise use the settings below to tune resampling parameters.
+	HU	Ha ennek a lejátszónak a DAC-ja támogatja a DSD-over-PCM szabványt, engedélyeznie kell ezt a natív DSD lejátszáshoz a PCM-re való átalakítás helyett. Győződjön meg arról is, hogy a hangerőszabályzó beállítása ennél a lejátszónál a "Kimeneti szint 100%-on van rögzítve".  Ellenkező esetben használja az alábbi beállításokat az újramintavételezési paraméterek hangolásához.
 
 PLUGIN_DSDPLAYER_NATIVE
 	EN	This player supports native playback of DSD files.  DSD-over-PCM should be configured on the player configuration interface.
+	HU	Ez a lejátszó támogatja a DSD fájlok natív lejátszását.  A DSD-over-PCM-et a lejátszó konfigurációs felületén kell konfigurálni.
 
 PLUGIN_DSDPLAYER_NO_DSDPLAY
 	EN	DSDPlayer does not currently include a version of dsdplay which supports your server.  DSD playback has been disabled for this player.
+	HU	A DSDPlayer jelenleg nem tartalmazza a dsdplay olyan verzióját, amely támogatja az Ön szerverét.  A DSD lejátszás le van tiltva ennél a lejátszónál.
 
 PLUGIN_DSDPLAYER_PCM_ONLY
 	EN	DSDPlayer will transcode DSD to PCM for this player.  Use the settings below to tune resampling parameters.
+	HU	A DSDPlayer átkódolja a DSD-t PCM-re ehhez a lejátszóhoz.  Használja az alábbi beállításokat az újramintavételezési paraméterek hangolásához.
 
 PLUGIN_DSDPLAYER_QUALITY
 	EN	Soxr Quality
+	HU	Soxr minőség
 
 PLUGIN_DSDPLAYER_QUALITY_DESC
 	EN	Specify the resampling quality.  Higher quality uses more processing power on your server.
+	HU	Adja meg az újramintavételi minőséget.  A jobb minőség több feldolgozási teljesítményt igényel a szerveren.
 
 PLUGIN_DSDPLAYER_FILTER
 	EN	Soxr Filter
+	HU	Soxr szűrő
 
 PLUGIN_DSDPLAYER_FILTER_DESC
 	EN	Specify the resampling filter type.
+	HU	Adja meg az újramintavételezési szűrő típusát.
 
 PLUGIN_DSDPLAYER_RECIPE_VH
 	EN	Very High Quality
+	HU	Nagyon jó minőség
 
 PLUGIN_DSDPLAYER_RECIPE_H
 	EN	High Quality
+	HU	Kiváló minőség
 
 PLUGIN_DSDPLAYER_RECIPE_M
 	EN	Medium Quality
+	HU	Közepes minőség
 
 PLUGIN_DSDPLAYER_RECIPE_M
 	EN	Medium Quality
+	HU	Közepes minőség
 
 PLUGIN_DSDPLAYER_RECIPE_L
 	EN	Low Quality
+	HU	Alacsony minőség
 
 PLUGIN_DSDPLAYER_RECIPE_Q
 	EN	Quick
+	HU	Gyors
 
 PLUGIN_DSDPLAYER_FILTER_L
 	EN	Linear Phase
+	HU	Lineáris fázis
 
 PLUGIN_DSDPLAYER_FILTER_I
 	EN	Intermediate Phase
+	HU	Köztes fázis
 
 PLUGIN_DSDPLAYER_FILTER_M
 	EN	Minimum Phase
+	HU	Minimális fázis
 
 PLUGIN_DSDPLAYER_STEEP
 	EN	Soxr Steep Filter
+	HU	Soxr meredek szűrő
 
 PLUGIN_DSDPLAYER_STEEP_DESC
 	EN	Use Soxr steep filter.
+	HU	Használjon Soxr meredek szűrőt.
 
 PLUGIN_DSDPLAYER_OTHER
 	EN	Other Params
+	HU	Egyéb paraméterek
 
 PLUGIN_DSDPLAYER_OTHER_DESC
 	EN	Specify additional parameters for soxr resampling.
+	HU	Adjon meg további paramétereket a soxr újramintavételezéshez.
 
 PLUGIN_DSDPLAYER_NONE
 	EN	(none selected)
+	HU	(nincs)
 
 PLUGIN_DSDPLAYER_GAIN
 	EN	Add gain
+	HU	Kiegyenlítés
 
 PLUGIN_DSDPLAYER_GAIN_DESC
 	EN	Many DSD/DSF files (especially SACD rips) are mastered to a peak of -6dB. This makes their volume low compared to other files. You can increase the level when resampling to PCM. If your chosen gain introduces audible distortion for any of your files, reduce it.
+	HU	Sok DSD/DSF fájlt (különösen az SACD rip) -6 dB-es csúcsig keverik. Ez más fájlokhoz képest alacsony hangerőt eredményez. PCM-re történő újramintavételezéskor növelheti a szintet. Ha a választott erősítés hallható torzítást okoz bármelyik fájlnál, csökkentse azt.
