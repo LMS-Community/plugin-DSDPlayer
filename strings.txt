@@ -1,136 +1,157 @@
 # String file for DSDPlayer plugin
 
 PLUGIN_DSDPLAYER
+	DE	DSDPlayer
 	EN	DSDPlayer
 	HU	DSDPlayer
 	NL	DSDPlayer
 
 PLUGIN_DSDPLAYER_DESC
+	DE	Das DSDPlayer-Plugin ermöglicht das Anhören von DSD-Audio-Dateien (.dff oder .dsf).
 	EN	The DSDPlayer plugin allows you to listen to DSD audio files (.dff or .dsf).
 	HU	A DSDPlayer beépülő modul lehetővé teszi a DSD hangfájlok (.dff vagy .dsf) hallgatását.
 	NL	De DSDPlayer plugin maakt het mogelijk om te luisteren naar DSD audiobestanden (.dff of .dsf).
 
 PLUGIN_DSDPLAYER_USEDOP
+	DE	DSD-over-PCM aktivieren
 	EN	Enable DSD-over-PCM
 	HU	DSD-over-PCM engedélyezése
 	NL	DSD-over-PCM inschakelen
 
 PLUGIN_DSDPLAYER_USEDOP_DESC
+	DE	Wenn der DAC dieses Players den DSD-over-PCM-Standard unterstützt, sollten Sie dies aktivieren, um native DSD-Wiedergabe statt Konvertierung zu PCM zu erhalten. Sie müssen außerdem sicherstellen, dass die Lautstärke-Einstellung für diesen Player auf "Ausgangsniveau ist fest auf 100%" gesetzt ist. Andernfalls verwenden Sie die untenstehenden Einstellungen, um die Resampling-Parameter anzupassen.
 	EN	If the DAC of this player supports DSD-over-PCM standard you should enable this in order to get native DSD playback instead of conversion to PCM. You must also ensure that Volume Control setting for this player is "Output level is fixed at 100%".  Otherwise use the settings below to tune resampling parameters.
 	HU	Ha ennek a lejátszónak a DAC-ja támogatja a DSD-over-PCM szabványt, engedélyeznie kell ezt a natív DSD lejátszáshoz a PCM-re való átalakítás helyett. Győződjön meg arról is, hogy a hangerőszabályzó beállítása ennél a lejátszónál a "Kimeneti szint 100%-on van rögzítve".  Ellenkező esetben használja az alábbi beállításokat az újramintavételezési paraméterek hangolásához.
 	NL	Als de DAC van deze muziekspeler DSD-over-PCM ondersteunt, dient u dit in te schakelen om native DSD-weergave te krijgen in plaats van conversie naar PCM. U dient er ook voor te zorgen dat de volumeregeling voor deze muziekspeler is ingesteld op "Uitgangsniveau staat vast op 100%". Gebruik anders de onderstaande instellingen om de resamplingparameters af te stemmen.
 
 PLUGIN_DSDPLAYER_NATIVE
+	DE	Dieser Player unterstützt die native Wiedergabe von DSD-Dateien. DSD-over-PCM muss in der Konfigurationsoberfläche des Players konfiguriert werden.
 	EN	This player supports native playback of DSD files.  DSD-over-PCM should be configured on the player configuration interface.
 	HU	Ez a lejátszó támogatja a DSD fájlok natív lejátszását.  A DSD-over-PCM-et a lejátszó konfigurációs felületén kell konfigurálni.
 	NL	Deze muziekspeler ondersteunt native weergave van DSD-bestanden. DSD-over-PCM moet worden geconfigureerd op de interface van de muziekspeler.
 
 PLUGIN_DSDPLAYER_NO_DSDPLAY
+	DE	DSDPlayer enthält derzeit keine Version von dsdplay, die Ihren Server unterstützt. Die DSD-Wiedergabe wurde für diesen Player deaktiviert.
 	EN	DSDPlayer does not currently include a version of dsdplay which supports your server.  DSD playback has been disabled for this player.
 	HU	A DSDPlayer jelenleg nem tartalmazza a dsdplay olyan verzióját, amely támogatja az Ön szerverét.  A DSD lejátszás le van tiltva ennél a lejátszónál.
 	NL	DSDPlayer bevat momenteel geen versie van dsdplay die jouw server ondersteunt. DSD-weergave is uitgeschakeld voor deze muziekspeler.
 
 PLUGIN_DSDPLAYER_PCM_ONLY
+	DE	DSDPlayer transkodiert DSD für diesen Player in PCM. Verwenden Sie die untenstehenden Einstellungen, um die Resampling-Parameter anzupassen.
 	EN	DSDPlayer will transcode DSD to PCM for this player.  Use the settings below to tune resampling parameters.
 	HU	A DSDPlayer átkódolja a DSD-t PCM-re ehhez a lejátszóhoz.  Használja az alábbi beállításokat az újramintavételezési paraméterek hangolásához.
 	NL	DSDPlayer transcodeert DSD naar PCM voor deze muziekspeler. Gebruik de onderstaande instellingen om de resamplingparameters af te stemmen.
 
 PLUGIN_DSDPLAYER_QUALITY
+	DE	Soxr-Qualität
 	EN	Soxr Quality
 	HU	Soxr minőség
 	NL	Soxr Kwaliteit
 
 PLUGIN_DSDPLAYER_QUALITY_DESC
+	DE	Legt die Resampling-Qualität fest. Höhere Qualität benötigt mehr Rechenleistung auf Ihrem Server.
 	EN	Specify the resampling quality.  Higher quality uses more processing power on your server.
 	HU	Adja meg az újramintavételi minőséget.  A jobb minőség több feldolgozási teljesítményt igényel a szerveren.
 	NL	Specificeer de resampling kwaliteit. Een hogere kwaliteit gebruikt meer processorkracht op jouw server.
 
 PLUGIN_DSDPLAYER_FILTER
+	DE	Soxr-Filter
 	EN	Soxr Filter
 	HU	Soxr szűrő
 	NL	Soxr Filter
 
 PLUGIN_DSDPLAYER_FILTER_DESC
+	DE	Gibt den Typ des Resampling-Filters an.
 	EN	Specify the resampling filter type.
 	HU	Adja meg az újramintavételezési szűrő típusát.
 	NL	Specificeer het type resampling filter.
 
 PLUGIN_DSDPLAYER_RECIPE_VH
+	DE	Sehr hohe Qualität
 	EN	Very High Quality
 	HU	Nagyon jó minőség
 	NL	Erg hoge kwaliteit
 
 PLUGIN_DSDPLAYER_RECIPE_H
+	DE	Hohe Qualität
 	EN	High Quality
 	HU	Kiváló minőség
 	NL	Hoge kwaliteit
 
 PLUGIN_DSDPLAYER_RECIPE_M
-	EN	Medium Quality
-	HU	Közepes minőség
-	NL	Gemiddelde kwaliteit
-
-PLUGIN_DSDPLAYER_RECIPE_M
+	DE	Mittlere Qualität
 	EN	Medium Quality
 	HU	Közepes minőség
 	NL	Gemiddelde kwaliteit
 
 PLUGIN_DSDPLAYER_RECIPE_L
+	DE	Niedrige Qualität
 	EN	Low Quality
 	HU	Alacsony minőség
 	NL	Lage kwaliteit
 
 PLUGIN_DSDPLAYER_RECIPE_Q
+	DE	Schnell
 	EN	Quick
 	HU	Gyors
 	NL	Snel
 
 PLUGIN_DSDPLAYER_FILTER_L
+	DE	Lineare Phase
 	EN	Linear Phase
 	HU	Lineáris fázis
 	NL	Linear fase
 
 PLUGIN_DSDPLAYER_FILTER_I
+	DE	Zwischenphase
 	EN	Intermediate Phase
 	HU	Köztes fázis
 	NL	Intermediate fase
 
 PLUGIN_DSDPLAYER_FILTER_M
+	DE	Minimale Phase
 	EN	Minimum Phase
 	HU	Minimális fázis
 	NL	Minimum fase
 
 PLUGIN_DSDPLAYER_STEEP
+	DE	Soxr steiler Filter
 	EN	Soxr Steep Filter
 	HU	Soxr meredek szűrő
 	NL	Soxr Steep Filter
 
 PLUGIN_DSDPLAYER_STEEP_DESC
+	DE	Verwenden Sie den steilen Soxr-Filter.
 	EN	Use Soxr steep filter.
 	HU	Használjon Soxr meredek szűrőt.
 	NL	Gebruik Soxr steep filter.
 
 PLUGIN_DSDPLAYER_OTHER
+	DE	Weitere Parameter
 	EN	Other Params
 	HU	Egyéb paraméterek
 	NL	Overige Parameters
 
 PLUGIN_DSDPLAYER_OTHER_DESC
+	DE	Geben Sie zusätzliche Parameter für das Soxr-Resampling an.
 	EN	Specify additional parameters for soxr resampling.
 	HU	Adjon meg további paramétereket a soxr újramintavételezéshez.
 	NL	Specificeer additionele parameters voor Soxr resampling.
 
 PLUGIN_DSDPLAYER_NONE
+	DE	(nichts ausgewählt)
 	EN	(none selected)
 	HU	(nincs)
 	NL	(niets geselecteerd)
 
 PLUGIN_DSDPLAYER_GAIN
+	DE	Gain hinzufügen
 	EN	Add gain
 	HU	Kiegyenlítés
 	NL	Voeg gain toe
 
 PLUGIN_DSDPLAYER_GAIN_DESC
+	DE	Viele DSD-/DSF-Dateien (insbesondere SACD-Rips) sind auf einen Peak von -6 dB gemastert. Dadurch ist ihre Lautstärke im Vergleich zu anderen Dateien niedrig. Sie können den Pegel beim Resampling auf PCM erhöhen. Wenn die gewählte Verstärkung bei einer Ihrer Dateien hörbare Verzerrungen verursacht, verringern Sie sie.
 	EN	Many DSD/DSF files (especially SACD rips) are mastered to a peak of -6dB. This makes their volume low compared to other files. You can increase the level when resampling to PCM. If your chosen gain introduces audible distortion for any of your files, reduce it.
 	HU	Sok DSD/DSF fájlt (különösen az SACD rip) -6 dB-es csúcsig keverik. Ez más fájlokhoz képest alacsony hangerőt eredményez. PCM-re történő újramintavételezéskor növelheti a szintet. Ha a választott erősítés hallható torzítást okoz bármelyik fájlnál, csökkentse azt.
 	NL	Veel DSD/DSF-bestanden (vooral SACD-rips) worden gemasterd tot een piek van -6dB. Dit maakt hun volume laag in vergelijking met andere bestanden. Je kan het volumeniveau verhogen bij het resamplen naar PCM. Als de door jouw gekozen versterking hoorbare vervorming introduceert voor een van jouw bestanden, verlaag deze dan.
